@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#9fd6ff">
-<title>Justine Kenneth Ibo — Aspiring UI/UX Designer (Y2K)</title>
+<title>Justine Kenneth Ibo — Aspiring UI/UX Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -21,7 +21,7 @@ a{color:inherit}h1,h2,h3{margin:0;font-weight:400}
 
 .wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 20px}
 section{padding:76px 0;position:relative}
-.win{position:relative;background:rgba(255,255,255,.74);backdrop-filter:blur(6px);border-radius:18px;border:2px solid #fff;box-shadow:0 0 0 2px var(--deep),0 14px 34px rgba(43,111,214,.35),inset 0 0 14px rgba(255,255,255,.8);overflow:hidden}
+.win{position:relative;background:rgba(255,255,255,.74);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:18px;border:2px solid #fff;box-shadow:0 0 0 2px var(--deep),0 14px 34px rgba(43,111,214,.35),inset 0 0 14px rgba(255,255,255,.8);overflow:hidden}
 .bar{display:flex;align-items:center;gap:10px;padding:8px 14px;background:linear-gradient(#f3fbff,#a9dcff 48%,#62b6f7 52%,#a8e0ff);border-bottom:2px solid var(--deep);font:12px 'Audiowide';letter-spacing:.08em}
 .bar>i{width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#7ccbff 60%,var(--deep));box-shadow:0 0 0 1px var(--deep)}
 .bar>span{margin-left:auto;display:flex;gap:6px}.bar>span b{width:20px;height:16px;border-radius:5px;background:linear-gradient(#fff,#bfe7ff);border:1px solid var(--deep)}
@@ -121,11 +121,10 @@ a,button,.btn,.chip,.step,.tab,.bar>span b,.shoot,#top .in>.st.b{cursor:url("dat
 #top .btn{padding:clamp(9px,1.6vh,13px) 26px}
 
 /* ===== mobile + touch: same experience as desktop ===== */
-.dots,.c-nav{display:none}
+.dots{display:none}
 .rib{cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
-.win{-webkit-backdrop-filter:blur(6px)}
 .toast{width:max-content;max-width:calc(100vw - 32px);text-align:center;line-height:1.4}
 .menu{display:none;flex:none;width:38px;height:30px;padding:0;border-radius:9px;border:2px solid var(--deep);background:linear-gradient(#fff,#bfe7ff 50%,#8fd0ff 52%,#d6f0ff);box-shadow:inset 0 0 6px #fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:4px}
 .menu i{display:block;width:16px;height:2px;border-radius:2px;background:var(--deep);transition:transform .3s,opacity .2s}
@@ -133,8 +132,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-c
 .menu[aria-expanded=true] i:nth-child(2){opacity:0}
 .menu[aria-expanded=true] i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 @media(max-width:760px){
- /* --- enhanced mobile view: un-zoomed proportional boxes, consistent centered headers, interactive cards --- */
- body{padding-top:44px;padding-bottom:calc(88px + env(safe-area-inset-bottom));font-size:13.5px;line-height:1.5}
+ /* --- enhanced mobile view: airy landing card, unclipped swipe+dots where needed, stacked regular windows --- */
+ body{padding-top:44px;padding-bottom:calc(88px + env(safe-area-inset-bottom));font-size:13.5px;line-height:1.55}
  .top{height:42px;gap:8px;padding:0 12px;font-size:11px}
  #clk,#sc{padding:2px 9px;font-size:10.5px}
  .menu{display:none!important}
@@ -149,55 +148,54 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-c
  .toast{border-radius:20px;padding:8px 16px;font-size:11px;bottom:calc(84px + env(safe-area-inset-bottom))}
  /* breathing room around windows so boxes don't look zoomed-in */
  .wrap{padding:0 18px;max-width:520px}
- section{padding:28px 0}
+ section{padding:30px 0}
  .win{border-radius:14px;box-shadow:0 0 0 1.5px var(--deep),0 8px 20px rgba(43,111,214,.26),inset 0 0 10px rgba(255,255,255,.8);transition:transform .25s cubic-bezier(.2,.9,.3,1.3),box-shadow .25s}
- .win.tap-pop{transform:scale(.985)}
+ .win.tap-pop{transform:scale(.988)}
  .bar{padding:5px 11px;font-size:10px;gap:7px;border-bottom-width:1.5px}
  .bar>i{width:11px;height:11px}
  .bar>span{gap:5px}.bar>span b{width:16px;height:12px;border-radius:4px}
- .in{padding:13px 14px}
- /* hero proportioned & compact */
- #top{min-height:calc(100svh - 120px);padding:10px 0 16px}
- #top .in{padding:18px 14px 16px}
- #top .in>.st.b{transform:scale(.68)}
- #top h1.chrome{font-size:clamp(22px,6.8vw,34px);margin:8px 0 2px;-webkit-text-stroke:1.4px var(--deep)}
- #top .role{font-size:clamp(12px,3.6vw,16px);margin:5px 0 4px}
- #top .lead{font-size:13px;line-height:1.45;max-width:34ch;margin:4px auto 8px}
- #top .now{font-size:11.5px;padding:5px 12px;margin:4px 0 12px;border-radius:10px;box-shadow:2px 2px 0 var(--sky)}
+ .in{padding:14px 15px}
+ /* landing hero: spacious, uncluttered vertical rhythm & tucked corner stars */
+ #top{min-height:calc(100svh - 126px);padding:14px 0 20px}
+ #top .in{padding:26px 18px 24px}
+ #top .in>.st.b{transform:scale(.55);opacity:.85}
+ #top .in>.st.b:nth-of-type(1){left:3%!important;top:6%!important}
+ #top .in>.st.b:nth-of-type(2){right:4%!important;top:6%!important}
+ #top .in>.st.b:nth-of-type(3){right:5%!important;bottom:8%!important}
+ #top .in>.st.b:nth-of-type(4){left:4%!important;bottom:8%!important}
+ #top h1.chrome{font-size:clamp(22px,6.6vw,32px);line-height:1.18;letter-spacing:.05em;margin:14px 0 8px;-webkit-text-stroke:1.4px var(--deep)}
+ #top .role{font-size:clamp(12px,3.5vw,15px);margin:0 0 12px}
+ #top .lead{font-size:13px;line-height:1.62;max-width:30ch;margin:0 auto 16px;font-weight:400}
+ #top .now{font-size:11px;line-height:1.4;padding:6px 13px;margin:0 0 20px;border-radius:10px;box-shadow:2px 2px 0 var(--sky)}
  #top .now b{font-size:9.5px;padding:2px 7px;margin-right:6px}
- .cta{flex-direction:row;gap:8px;justify-content:center}
- .cta .btn,#top .btn{padding:8px 16px;font-size:10.5px;width:auto;flex:1;max-width:155px;text-align:center}
+ .cta{flex-direction:row;gap:10px;justify-content:center}
+ .cta .btn,#top .btn{padding:9px 16px;font-size:10.5px;width:auto;flex:1;max-width:150px;text-align:center}
  /* consistent section headings & subtitles */
  .wrap.c{text-align:center}
- h2.chrome{font-size:clamp(20px,5.8vw,26px);margin-bottom:4px;-webkit-text-stroke:1.3px var(--deep)}
- .sub{margin:0 auto 14px;max-width:38ch;font-size:12.5px;line-height:1.45}
- /* consistent auto-carousel rows across mobile sections (no clipped edges!) */
- .two,.xp-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
- .two::-webkit-scrollbar,.xp-track::-webkit-scrollbar{display:none}
- .two>.win,.xp-track>.xp{flex:0 0 100%;scroll-snap-align:center;margin:0!important}
+ h2.chrome{font-size:clamp(20px,5.8vw,26px);margin-bottom:5px;-webkit-text-stroke:1.3px var(--deep)}
+ .sub{margin:0 auto 16px;max-width:36ch;font-size:12.5px;line-height:1.5}
+ /* stacked windows with consistent spacing (not carousels) */
+ .two{grid-template-columns:1fr;gap:12px}
  #about>.wrap>.win,#education .two{margin-top:12px!important}
  h3.d{font-size:13px;margin-bottom:3px}
  .k{font-size:12px;margin:0 0 8px}
  .chips{gap:6px}
  .chip{font-size:11.5px;padding:4px 10px;border-width:1.5px}
  .pill{font-size:10px;padding:3px 10px;border-width:1.5px}
- /* about: compact 3-col stat cards + unclipped 1-by-1 auto-moving step carousel */
+ /* about: compact 3-col stat cards + unclipped swipeable & auto-sliding 4-step carousel with dots only */
  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:2px 0 0}
  .stats>div{background:#fff;border:1.5px solid var(--deep);border-radius:11px;padding:7px 4px;font-size:10px;line-height:1.25;box-shadow:2px 2px 0 var(--sky);cursor:pointer;transition:transform .2s,background .2s}
- .stats>div:active,.stats>div.pulse{transform:translateY(-3px) scale(1.03);background:#fffbe0}
+ .stats>div:active{transform:translateY(-3px) scale(1.03);background:#fffbe0}
  .stats b{font-size:18px}
  .proc{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:12px 0 0;padding:6px 2px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
  .proc::-webkit-scrollbar{display:none}
  .step{flex:0 0 100%;scroll-snap-align:center;padding:12px 14px;border-radius:11px;border-width:1.5px;box-shadow:2px 2px 0 var(--sky);cursor:pointer;text-align:left;transition:transform .25s,background .25s,box-shadow .25s}
  .step.on{background:#fffbe0;transform:translateY(-2px);box-shadow:0 3.5px 0 var(--deep)}
- .step h3{font-size:12.5px;margin-bottom:4px}.step p{font-size:12px;line-height:1.4}
- .c-nav{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px}
- .c-arr{width:26px;height:22px;border-radius:99px;border:1.5px solid var(--deep);background:linear-gradient(#fff,#bfe7ff);color:var(--ink);font:10px 'Audiowide';display:inline-flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 0 var(--deep);padding:0;transition:transform .15s,background .2s}
- .c-arr:active{transform:translateY(2px);box-shadow:none;background:var(--star)}
- .dots{display:flex;justify-content:center;align-items:center;gap:6px;margin:0}
+ .step h3{font-size:12.5px;margin-bottom:4px}.step p{font-size:12px;line-height:1.42}
+ .dots{display:flex;justify-content:center;align-items:center;gap:7px;margin-top:6px}
  .dots i{width:7px;height:7px;border-radius:50%;border:1.5px solid var(--deep);background:#fff;cursor:pointer;transition:background .25s,transform .25s,width .25s}
  .dots i.on{background:var(--star);width:18px;border-radius:99px}
- /* projects: compact tab pills + un-zoomed screenshot */
+ /* projects: swipeable card + tabs + dots (no prev/next buttons on mobile) */
  .tabs{position:relative;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;gap:7px;margin:0 -6px 12px;padding:3px 6px 8px;scroll-snap-type:x proximity;scrollbar-width:none}
  .tabs::-webkit-scrollbar{display:none}
  .tab{flex:none;scroll-snap-align:center;padding:6px 12px;font-size:10.5px}
@@ -209,16 +207,19 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-c
  #ln{font-size:15px!important;margin-bottom:3px!important}
  #lp p{font-size:12.5px;margin:0 0 7px;line-height:1.45}
  .pills{justify-content:flex-start;gap:6px;margin-top:9px}
- .nav{margin-top:12px}
- .nav .btn{padding:6px 13px;font-size:10.5px}
- #lc{font-size:11px}
- /* experience: clean consistent carousel cards */
- .xp{overflow:hidden;margin:0}
- .xp::before,.xp::after{display:none}
+ .nav{display:none}
+ /* experience: clean stacked timeline cards */
+ .xp{overflow:visible;margin:0 0 12px 18px}
+ .xp:last-child{margin-bottom:0}
+ .xp .bar{border-radius:12px 12px 0 0}.xp .in{border-radius:0 0 12px 12px}
+ .xp::before{content:"";position:absolute;left:-21px;top:9px;width:11px;height:11px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fffbe0,var(--star));border:1.5px solid var(--deep);z-index:2;transition:transform .25s}
+ .xp:active::before{transform:scale(1.35)}
+ .xp::after{content:"";position:absolute;left:-16.5px;top:22px;width:2px;height:calc(100% - 4px);background:linear-gradient(var(--deep),rgba(43,111,214,.25));border-radius:2px}
+ .xp:last-child::after{display:none}
  .xp .when{font-size:10px}
  .xp h3{font-size:13.5px;margin:2px 0}
  .xp .org{font-size:12px;margin-bottom:5px}
- .xp ul{padding-left:16px}.xp li{font-size:12px;margin-bottom:3px;line-height:1.4}
+ .xp ul{padding-left:16px}.xp li{font-size:12px;margin-bottom:3px;line-height:1.42}
  /* education & certs */
  .certs li{padding:7px 0;gap:8px;font-size:12px}.certs b{font-size:10.5px}
  /* contact: sleek compact button grid */
@@ -280,9 +281,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-c
 
 <section id="experience"><div class="wrap c">
  <h2 class="chrome">Experience</h2><p class="sub">Where I've been working and learning.</p>
- <div class="xp-track"><div class="win xp"><div class="bar"><i></i>now_playing.exe<span><b></b><b></b></span></div><div class="in"><div class="when">Present</div><h3>UI/UX Designer Intern</h3><div class="org">Hytect Power Inc.</div><ul><li>Designing wireframes and UI flows for inventory and product-management modules.</li><li>Translating requirements into clear screens the team can build and test.</li><li>Iterating on layouts with feedback from the team.</li></ul></div></div>
+ <div class="win xp"><div class="bar"><i></i>now_playing.exe<span><b></b><b></b></span></div><div class="in"><div class="when">Present</div><h3>UI/UX Designer Intern</h3><div class="org">Hytect Power Inc.</div><ul><li>Designing wireframes and UI flows for inventory and product-management modules.</li><li>Translating requirements into clear screens the team can build and test.</li><li>Iterating on layouts with feedback from the team.</li></ul></div></div>
  <div class="win xp"><div class="bar"><i></i>also_playing.exe<span><b></b><b></b></span></div><div class="in"><div class="when">Present</div><h3>Secretary, Information &amp; Communication Committee</h3><div class="org">QCU Kalayaan Dance Company</div><ul><li>Handles information and communication for the dance company and its members.</li><li>Prepares committee documents and materials, such as certificates of appreciation.</li></ul></div></div>
- <div class="win xp"><div class="bar"><i></i>dswd_cfw.exe<span><b></b><b></b></span></div><div class="in"><div class="when">25-day program</div><h3>Student Assistant / IT Intern</h3><div class="org">DSWD — Cash-for-Work Program</div><ul><li>Studied office workflows and built an internal system to streamline record-keeping.</li><li>Produced promotional and announcement materials for the office.</li><li>Supported day-to-day organizing and encoding of official documents.</li></ul></div></div></div>
+ <div class="win xp"><div class="bar"><i></i>dswd_cfw.exe<span><b></b><b></b></span></div><div class="in"><div class="when">25-day program</div><h3>Student Assistant / IT Intern</h3><div class="org">DSWD — Cash-for-Work Program</div><ul><li>Studied office workflows and built an internal system to streamline record-keeping.</li><li>Produced promotional and announcement materials for the office.</li><li>Supported day-to-day organizing and encoding of official documents.</li></ul></div></div>
 </div></section>
 
 <section id="education"><div class="wrap c">
@@ -326,7 +327,7 @@ $('#tabs').innerHTML=L.map((d,j)=>`<button class="btn tab" data-k="${j}">${d.n}<
 function render(){const d=L[k],im=$('#shot');$('#lt').textContent='project_'+(k+1)+'.exe';$('#ln').textContent=d.n;$('#lr').textContent=d.r;$('#lp').innerHTML=d.p.map(x=>'<p>'+x+'</p>').join('');$('#lpills').innerHTML=d.t.map(x=>'<span class="pill">'+x+'</span>').join('');
  const el=d.i.length&&document.getElementById('i'+d.i[alt%d.i.length]);if(el){im.hidden=false;$('#ph').hidden=true;im.src=el.src}else{im.hidden=true;$('#ph').hidden=false}
  $('#sw').hidden=d.i.length<2;$('#lc').textContent=(k+1)+' / '+L.length;$$('.tab').forEach((b,j)=>b.classList.toggle('on',j===k));{const tb=$('#tabs'),t=$('.tab.on');if(tb&&t&&tb.scrollWidth>tb.clientWidth)tb.scrollTo({left:t.offsetLeft-(tb.clientWidth-t.offsetWidth)/2,behavior:rdy?'smooth':'auto'})}if(rdy){const c=$('#card .in');c.style.setProperty('--dx',dir*50+'px');c.classList.remove('swap');void c.offsetWidth;c.classList.add('swap')}}
-let dir=1,rdy=0;const go=n=>{dir=n>k?1:-1;k=(n+L.length)%L.length;alt=0;render()};
+let dir=1,rdy=0,go=n=>{dir=n>k?1:-1;k=(n+L.length)%L.length;alt=0;render()};
 $$('.tab').forEach(b=>b.onclick=()=>go(+b.dataset.k));$('#prev').onclick=()=>go(k-1);$('#next').onclick=()=>go(k+1);$('#sw').onclick=()=>{alt++;render()};render();rdy=1;
 $('#shot').onclick=()=>{$('#lb img').src=$('#shot').src;$('#lb').classList.add('on')};$('#lb').onclick=()=>$('#lb').classList.remove('on');
 addEventListener('keydown',e=>{if(e.key==='Escape')$('#lb').classList.remove('on')});
@@ -404,62 +405,42 @@ if(!reduce){const r=$('.rib'),d=r.firstElementChild;d.style.animation='none';d.s
   best._c=1;gain(best);const an=best.animate&&best.animate([{transform:'scale(1) rotate(0)',opacity:1},{transform:'scale(2.6) rotate(180deg)',opacity:0}],{duration:520,fill:'forwards'});
   setTimeout(()=>{an&&an.cancel();best._c=0;best.style.left=Math.random()*100+'%';best.style.top=Math.random()*100+'%'},6000)})}
 
-/* unified auto-moving carousel for mobile sections (How I work, Skills/Tools, Experience, Education) + interactive controls */
+/* swipe + dots carousel only where needed (How I Work steps & Projects) + interactive mobile touches */
 (()=>{
- const makeCarousel=(track,interval=3400,isSteps=false)=>{
-  if(!track)return;
-  const items=[...track.children];if(items.length<2)return;
-  const nav=document.createElement('div');nav.className='c-nav';
-  const prevBtn=document.createElement('button');prevBtn.type='button';prevBtn.className='c-arr';prevBtn.setAttribute('aria-label','Previous slide');prevBtn.textContent='◀';
-  const dt=document.createElement('div');dt.className='dots';dt.innerHTML=items.map(()=>'<i></i>').join('');
-  const nextBtn=document.createElement('button');nextBtn.type='button';nextBtn.className='c-arr';nextBtn.setAttribute('aria-label','Next slide');nextBtn.textContent='▶';
-  nav.append(prevBtn,dt,nextBtn);track.after(nav);
-  const d=[...dt.children];let idx=0,tm=null,paused=false,inView=false;
-  const goTo=(i,smooth=true)=>{
-   idx=(i+items.length)%items.length;
-   const s=items[idx];if(!s)return;
-   if(track.scrollWidth>track.clientWidth){
-    const left=s.offsetLeft-(track.clientWidth-s.offsetWidth)/2;
-    track.scrollTo({left,behavior:smooth&&!reduce?'smooth':'auto'});
-   }
-   d.forEach((x,j)=>x.classList.toggle('on',j===idx));
-   if(isSteps)items.forEach((x,j)=>x.classList.toggle('on',j===idx));
-  };
-  const sync=()=>{
-   if(track.scrollWidth<=track.clientWidth)return;
-   const c=track.scrollLeft+track.clientWidth/2;let b=0,bd=1e9;
-   items.forEach((s,i)=>{const dd=Math.abs(s.offsetLeft+s.offsetWidth/2-c);if(dd<bd){bd=dd;b=i}});
-   idx=b;
-   d.forEach((x,i)=>x.classList.toggle('on',i===b));
-   if(isSteps)items.forEach((x,i)=>x.classList.toggle('on',i===b));
-  };
-  const start=()=>{clearInterval(tm);if(reduce)return;tm=setInterval(()=>{if(!paused&&inView&&innerWidth<=760&&!document.hidden)goTo(idx+1)},interval)};
-  const pauseTmp=()=>{paused=true;clearTimeout(track._pt);track._pt=setTimeout(()=>{paused=false},5000)};
-  track.addEventListener('scroll',sync,{passive:true});
-  track.addEventListener('touchstart',pauseTmp,{passive:true});
-  track.addEventListener('pointerdown',pauseTmp,{passive:true});
-  prevBtn.onclick=e=>{e.stopPropagation();pauseTmp();goTo(idx-1)};
-  nextBtn.onclick=e=>{e.stopPropagation();pauseTmp();goTo(idx+1)};
-  d.forEach((x,i)=>x.onclick=e=>{e.stopPropagation();pauseTmp();goTo(i)});
-  if(isSteps)items.forEach((s,i)=>s.onclick=()=>{pauseTmp();goTo(i);say(s.querySelector('h3').textContent+' ✦')});
-  const io=new IntersectionObserver(es=>es.forEach(e=>{inView=e.isIntersecting}),{threshold:.25});
-  io.observe(track);
-  sync();start();
+ /* 1. How I Work (.proc): unclipped swipeable carousel with dots & gentle auto-slide */
+ const p=$('.proc'),st=[...p.children],dt=document.createElement('div');
+ dt.className='dots';dt.innerHTML=st.map(()=>'<i></i>').join('');p.after(dt);
+ const d=[...dt.children];let idx=0,paused=false,inView=false,pt=null;
+ const pauseTmp=()=>{paused=true;clearTimeout(pt);pt=setTimeout(()=>paused=false,5000)};
+ const goStep=(i,smooth=true)=>{
+  idx=(i+st.length)%st.length;const s=st[idx];if(!s)return;
+  if(p.scrollWidth>p.clientWidth)p.scrollTo({left:s.offsetLeft-(p.clientWidth-s.offsetWidth)/2,behavior:smooth&&!reduce?'smooth':'auto'});
+  d.forEach((x,j)=>x.classList.toggle('on',j===idx));
+  st.forEach((x,j)=>x.classList.toggle('on',j===idx));
  };
- makeCarousel($('.proc'),3000,true);
- makeCarousel($('#about .two'),4200,false);
- makeCarousel($('.xp-track'),4000,false);
- makeCarousel($('#education .two'),4400,false);
+ const sync=()=>{
+  if(p.scrollWidth<=p.clientWidth)return;
+  const c=p.scrollLeft+p.clientWidth/2;let b=0,bd=1e9;
+  st.forEach((s,i)=>{const dd=Math.abs(s.offsetLeft+s.offsetWidth/2-c);if(dd<bd){bd=dd;b=i}});
+  idx=b;d.forEach((x,i)=>x.classList.toggle('on',i===b));st.forEach((x,i)=>x.classList.toggle('on',i===b));
+ };
+ p.addEventListener('scroll',sync,{passive:true});
+ p.addEventListener('touchstart',pauseTmp,{passive:true});
+ p.addEventListener('pointerdown',pauseTmp,{passive:true});
+ d.forEach((x,i)=>x.onclick=e=>{e.stopPropagation();pauseTmp();goStep(i)});
+ st.forEach((s,i)=>s.onclick=()=>{pauseTmp();goStep(i);say(s.querySelector('h3').textContent+' ✦')});
+ new IntersectionObserver(es=>es.forEach(e=>{inView=e.isIntersecting}),{threshold:.3}).observe(p);
+ if(!reduce)setInterval(()=>{if(!paused&&inView&&innerWidth<=760&&!document.hidden)goStep(idx+1)},3200);
+ sync();
 
- /* auto-rotate Projects on mobile when in view and idle */
- {const wc=$('#work');let wIn=false,wPause=false,wPt=null;
-  const pauseW=()=>{wPause=true;clearTimeout(wPt);wPt=setTimeout(()=>wPause=false,6500)};
-  wc.addEventListener('touchstart',pauseW,{passive:true});
-  wc.addEventListener('pointerdown',pauseW,{passive:true});
-  new IntersectionObserver(es=>es.forEach(e=>{wIn=e.isIntersecting}),{threshold:.3}).observe(wc);
-  if(!reduce)setInterval(()=>{if(wIn&&!wPause&&innerWidth<=760&&!document.hidden&&!$('#lb').classList.contains('on'))go(k+1)},4800);
- }
+ /* 2. Projects (#card): dots indicator on mobile (swipe or tap dots/tabs, no prev/next buttons) */
+ const pdt=document.createElement('div');pdt.className='dots';pdt.id='pdots';
+ pdt.innerHTML=L.map(()=>'<i></i>').join('');$('#card .in').appendChild(pdt);
+ const pd=[...pdt.children],upPdots=()=>pd.forEach((x,i)=>x.classList.toggle('on',i===k));
+ pd.forEach((x,i)=>x.onclick=()=>go(i));
+ const origGo=go;go=n=>{origGo(n);upPdots()};upPdots();
 
+ /* 3. Interactive stat cards & window double-tap minimize */
  $$('.stats>div').forEach(el=>el.onclick=()=>{const b=el.querySelector('b');if(b)gain(b);say(el.textContent.replace(/(\d+\.?\d*\+?)/,'$1 ') + ' ✦')});
  $$('.win').forEach(w=>{let lt=0;const bar=w.querySelector('.bar'),minBtn=bar&&bar.lastElementChild&&bar.lastElementChild.children[0];if(bar&&minBtn)bar.addEventListener('click',e=>{if(e.target.closest('b'))return;const nw=performance.now();if(nw-lt<320){minBtn.click();lt=0}else lt=nw});
   w.addEventListener('touchstart',e=>{if(!e.target.closest('a,button,.bar'))w.classList.add('tap-pop')},{passive:true});
